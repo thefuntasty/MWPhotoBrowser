@@ -114,8 +114,8 @@
 }
 
 - (void)performLayout {
-    //UINavigationBar *navBar = self.navigationController.navigationBar;
-    //self.collectionView.contentInset = UIEdgeInsetsMake(navBar.frame.origin.y + navBar.frame.size.height + [self getGutter], 0, 0, 0);
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    self.collectionView.contentInset = UIEdgeInsetsMake(navBar.frame.origin.y + navBar.frame.size.height, 0, 0, 0);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {

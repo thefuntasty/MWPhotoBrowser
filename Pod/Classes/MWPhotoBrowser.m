@@ -51,8 +51,8 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 
 - (void)_initialisation {
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.extendedLayoutIncludesOpaqueBars = YES;
     
     // Defaults
     NSNumber *isVCBasedStatusBarAppearanceNum = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UIViewControllerBasedStatusBarAppearance"];
@@ -362,7 +362,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     [self setNavBarAppearance:animated];
     
     // Update UI
-	[self hideControlsAfterDelay];
+	//[self hideControlsAfterDelay];
     
     // Initial appearance
     if (!_viewHasAppearedInitially) {
@@ -580,7 +580,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 	_currentPageIndex = _pageIndexBeforeRotation;
 	
 	// Delay control holding
-	[self hideControlsAfterDelay];
+	//[self hideControlsAfterDelay];
     
     // Layout
     [self layoutVisiblePages];
@@ -1133,7 +1133,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 	}
 	
 	// Update timer to give more time
-	[self hideControlsAfterDelay];
+	//[self hideControlsAfterDelay];
 	
 }
 
@@ -1388,10 +1388,10 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         hidden = NO;
     
     // Cancel any timers
-    [self cancelControlHiding];
+    //[self cancelControlHiding];
     
     // Animations & positions
-    CGFloat animatonOffset = 20;
+    CGFloat animatonOffset = 0;
     CGFloat animationDuration = (animated ? 0.35 : 0);
     
     // Status bar
@@ -1474,7 +1474,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 	// Control hiding timer
 	// Will cancel existing timer but only begin hiding if
 	// they are visible
-	if (!permanent) [self hideControlsAfterDelay];
+	//if (!permanent) [self hideControlsAfterDelay];
 	
 }
 
@@ -1494,21 +1494,21 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     return UIStatusBarAnimationSlide;
 }
 
-- (void)cancelControlHiding {
-	// If a timer exists then cancel and release
-	if (_controlVisibilityTimer) {
-		[_controlVisibilityTimer invalidate];
-		_controlVisibilityTimer = nil;
-	}
-}
-
-// Enable/disable control visiblity timer
-- (void)hideControlsAfterDelay {
-	if (![self areControlsHidden]) {
-        [self cancelControlHiding];
-		_controlVisibilityTimer = [NSTimer scheduledTimerWithTimeInterval:self.delayToHideElements target:self selector:@selector(hideControls) userInfo:nil repeats:NO];
-	}
-}
+//- (void)cancelControlHiding {
+//	// If a timer exists then cancel and release
+//	if (_controlVisibilityTimer) {
+//		[_controlVisibilityTimer invalidate];
+//		_controlVisibilityTimer = nil;
+//	}
+//}
+//
+//// Enable/disable control visiblity timer
+//- (void)hideControlsAfterDelay {
+//	if (![self areControlsHidden]) {
+//        [self cancelControlHiding];
+//		//_controlVisibilityTimer = [NSTimer scheduledTimerWithTimeInterval:self.delayToHideElements target:self selector:@selector(hideControls) userInfo:nil repeats:NO];
+//	}
+//}
 
 - (BOOL)areControlsHidden { return (_toolbar.alpha == 0); }
 - (void)hideControls { [self setControlsHidden:YES animated:YES permanent:NO]; }
@@ -1596,7 +1596,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
             typeof(self) __weak weakSelf = self;
             [self.activityViewController setCompletionHandler:^(NSString *activityType, BOOL completed) {
                 weakSelf.activityViewController = nil;
-                [weakSelf hideControlsAfterDelay];
+                //[weakSelf hideControlsAfterDelay];
                 [weakSelf hideProgressHUD:YES];
             }];
             // iOS 8 - Set the Anchor Point for the popover
