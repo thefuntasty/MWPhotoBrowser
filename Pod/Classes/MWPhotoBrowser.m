@@ -207,7 +207,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     // Navigation buttons
     if ([self.navigationController.viewControllers objectAtIndex:0] == self) {
         // We're first on stack so show done button
-        _doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil) style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed:)];
+        _doneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/cross" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]] style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed:)]; //[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil) style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed:)];
         // Set appearance
         [_doneButton setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [_doneButton setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
@@ -439,8 +439,8 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     navBar.tintColor = [UIColor whiteColor];
     navBar.barTintColor = nil;
     navBar.shadowImage = nil;
-    navBar.translucent = YES;
-    navBar.barStyle = UIBarStyleBlackTranslucent;
+    navBar.translucent = NO;
+    navBar.barStyle = UIBarStyleBlack;
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsLandscapePhone];
 }
@@ -473,10 +473,6 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
             _previousViewControllerBackButton = nil;
         }
     }
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - Layout
@@ -551,7 +547,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
@@ -1534,15 +1530,15 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     // Only if we're modal and there's a done button
     if (_doneButton) {
         // See if we actually just want to show/hide grid
-        if (self.enableGrid) {
-            if (self.startOnGrid && !_gridController) {
-                [self showGrid:YES];
-                return;
-            } else if (!self.startOnGrid && _gridController) {
-                [self hideGrid];
-                return;
-            }
-        }
+//        if (self.enableGrid) {
+//            if (self.startOnGrid && !_gridController) {
+//                [self showGrid:YES];
+//                return;
+//            } else if (!self.startOnGrid && _gridController) {
+//                [self hideGrid];
+//                return;
+//            }
+//        }
         // Dismiss view controller
         if ([_delegate respondsToSelector:@selector(photoBrowserDidFinishModalPresentation:)]) {
             // Call delegate method and let them dismiss us

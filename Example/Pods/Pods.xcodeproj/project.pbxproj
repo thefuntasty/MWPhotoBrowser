@@ -195,6 +195,8 @@
 		8EA8EF95C52D48A5BDBEBA9F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0C195A3C526E578A2D06E8 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		8FF047808CAD19544D4C4966 /* UIImage+MWPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2D4E88445506627939F4A7 /* UIImage+MWPhotoBrowser.h */; };
 		904DA7832EC025149B7ED8A0 /* EXPMatchers+contain.m in Sources */ = {isa = PBXBuildFile; fileRef = B5260E49261879D5C5A29740 /* EXPMatchers+contain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9098B9691B5794CE007F89E4 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9098B9671B5794CE007F89E4 /* cross@2x.png */; };
+		9098B96A1B5794CE007F89E4 /* cross@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9098B9681B5794CE007F89E4 /* cross@3x.png */; };
 		90E1E0037869AEC0222529BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7ED7C26315E5EA56E4DF99 /* Foundation.framework */; };
 		92481964C6DAD8DB690FEF01 /* VideoOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5817493A7CB99D12F8368D67 /* VideoOverlay.png */; };
 		936639C36F94B775EEF41FC6 /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = D90DE7FD620204AD8E929609 /* SDWebImageCompat.h */; };
@@ -673,6 +675,8 @@
 		8E552E6408CEE5300392AA3F /* EXPDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = Expecta/EXPDefines.h; sourceTree = "<group>"; };
 		8FD2C42966E780961EBD46B8 /* SPTExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = Specta/Specta/SPTExample.h; sourceTree = "<group>"; };
 		9058208017957DE2F998DABE /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
+		9098B9671B5794CE007F89E4 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		9098B9681B5794CE007F89E4 /* cross@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@3x.png"; sourceTree = "<group>"; };
 		9119D04C392835B7DD8532DB /* libPods-MWPhotoBrowser_Tests-Expecta+Snapshots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MWPhotoBrowser_Tests-Expecta+Snapshots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		912EB57DC4CD0267AD81D584 /* EXPMatchers+haveCountOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+haveCountOf.m"; path = "Expecta/Matchers/EXPMatchers+haveCountOf.m"; sourceTree = "<group>"; };
 		95ED37E25A94CDB0E31B1379 /* EXPMatchers+postNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+postNotification.h"; path = "Expecta/Matchers/EXPMatchers+postNotification.h"; sourceTree = "<group>"; };
@@ -1103,6 +1107,8 @@
 		5133FE9F140C821E3B75E50D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				9098B9671B5794CE007F89E4 /* cross@2x.png */,
+				9098B9681B5794CE007F89E4 /* cross@3x.png */,
 				485A1AE85581A8215CB40F99 /* ImageError.png */,
 				EEEAE09B0FD4BB2169DC4F28 /* ImageError@2x.png */,
 				50452B8C819E98E6455CB53A /* ImageError@3x.png */,
@@ -2030,6 +2036,7 @@
 				7840677D1B53AB8E72D688F7 /* ImageError@3x.png in Resources */,
 				F62A5B939A16E2FEFACDDE8F /* ImageSelectedOff.png in Resources */,
 				3797CD96C2612F93422E7F38 /* ImageSelectedOff@2x.png in Resources */,
+				9098B96A1B5794CE007F89E4 /* cross@3x.png in Resources */,
 				9B30BA22CE70ECEE8D3B8192 /* ImageSelectedOff@3x.png in Resources */,
 				475CDD64472AD6855942D983 /* ImageSelectedOn.png in Resources */,
 				47769930A845B57821CA07B3 /* ImageSelectedOn@2x.png in Resources */,
@@ -2058,6 +2065,7 @@
 				BFA3177986BC86D9FC9888AD /* VideoOverlay.png in Resources */,
 				5A51026DAFDDBABB30C49936 /* VideoOverlay@2x.png in Resources */,
 				3753B15D0E5B8CF09D0A7932 /* VideoOverlay@3x.png in Resources */,
+				9098B9691B5794CE007F89E4 /* cross@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
