@@ -215,6 +215,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         UIImage *cross = [UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/cross" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]];
         _doneButton = [[UIBarButtonItem alloc] initWithImage:cross style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed:)]; //[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil) style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed:)];
         // Set appearance
+        _isModal = YES;
         [_doneButton setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [_doneButton setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
         [_doneButton setBackgroundImage:nil forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
@@ -223,6 +224,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         [_doneButton setTitleTextAttributes:[NSDictionary dictionary] forState:UIControlStateHighlighted];
         self.navigationItem.rightBarButtonItem = _doneButton;
     } else {
+        _isModal = NO;
         // We're not first so show back button
         UIViewController *previousViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
         NSString *backButtonTitle = previousViewController.navigationItem.backBarButtonItem ? previousViewController.navigationItem.backBarButtonItem.title : previousViewController.title;
@@ -1550,6 +1552,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         // Dismiss view controller
         if ([_delegate respondsToSelector:@selector(photoBrowserDidFinishModalPresentation:)]) {
             // Call delegate method and let them dismiss us
+            _isModal = NO;
             [_delegate photoBrowserDidFinishModalPresentation:self];
         } else  {
             [self dismissViewControllerAnimated:YES completion:nil];
