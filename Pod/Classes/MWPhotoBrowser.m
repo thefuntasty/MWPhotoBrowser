@@ -475,6 +475,10 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - Layout
 
 - (void)viewWillLayoutSubviews {
