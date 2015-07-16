@@ -25,6 +25,10 @@
 - (id)init {
     if ((self = [super initWithCollectionViewLayout:[UICollectionViewFlowLayout new]])) {
         
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars = YES;
+        
+        
         // Defaults
         _columns = 3, _columnsL = 4;
         _margin = 0, _gutter = 1;
@@ -39,13 +43,13 @@
         } else if ([UIScreen mainScreen].bounds.size.height == 480) {
             // iPhone 3.5 inch
             _columns = 3, _columnsL = 4;
-            _margin = 0, _gutter = 1;
-            _marginL = 1, _gutterL = 2;
+            _margin = 10, _gutter = 10;
+            _marginL = 1, _gutterL = 10;
         } else {
             // iPhone 4 inch
             _columns = 3, _columnsL = 5;
-            _margin = 0, _gutter = 1;
-            _marginL = 0, _gutterL = 2;
+            _margin = 10, _gutter = 10;
+            _marginL = 10, _gutterL = 10;
         }
 
         _initialContentOffset = CGPointMake(0, CGFLOAT_MAX);
@@ -110,8 +114,8 @@
 }
 
 - (void)performLayout {
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    self.collectionView.contentInset = UIEdgeInsetsMake(navBar.frame.origin.y + navBar.frame.size.height + [self getGutter], 0, 0, 0);
+    //UINavigationBar *navBar = self.navigationController.navigationBar;
+    //self.collectionView.contentInset = UIEdgeInsetsMake(navBar.frame.origin.y + navBar.frame.size.height + [self getGutter], 0, 0, 0);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
