@@ -165,8 +165,8 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     _toolbar = [[UIToolbar alloc] initWithFrame:[self frameForToolbarAtOrientation:self.interfaceOrientation]];
     _toolbar.tintColor = [UIColor whiteColor];
     _toolbar.barTintColor = nil;
-    [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
-    [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
+    [_toolbar setBackgroundImage:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/black_navbar" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    [_toolbar setBackgroundImage:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/black_navbar" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
     _toolbar.barStyle = UIBarStyleBlack;
     _toolbar.translucent = NO;
     [_toolbar setShadowImage:[UIImage new] forToolbarPosition:UIToolbarPositionAny];
@@ -447,8 +447,8 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     navBar.shadowImage = nil;
     navBar.translucent = NO;
     navBar.barStyle = UIBarStyleBlack;
-    [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsLandscapePhone];
+    [navBar setBackgroundImage:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/black_navbar" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]] forBarMetrics:UIBarMetricsDefault];
+    [navBar setBackgroundImage:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/black_navbar" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]] forBarMetrics:UIBarMetricsLandscapePhone];
     [navBar setShadowImage:[UIImage new]];
 }
 
@@ -1086,13 +1086,14 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         if (_gridController.selectionMode) {
             self.title = NSLocalizedString(@"Select Photos", nil);
         } else {
-            NSString *photosText;
-            if (numberOfPhotos == 1) {
-                photosText = NSLocalizedString(@"photo", @"Used in the context: '1 photo'");
-            } else {
-                photosText = NSLocalizedString(@"photos", @"Used in the context: '3 photos'");
-            }
-            self.title = [NSString stringWithFormat:@"%lu %@", (unsigned long)numberOfPhotos, photosText];
+//            NSString *photosText;
+//            if (numberOfPhotos == 1) {
+//                photosText = NSLocalizedString(@"photo", @"Used in the context: '1 photo'");
+//            } else {
+//                photosText = NSLocalizedString(@"photos", @"Used in the context: '3 photos'");
+//            }
+//            self.title = [NSString stringWithFormat:@"%lu %@", (unsigned long)numberOfPhotos, photosText];
+            self.title = NSLocalizedString(@"Gallery", @"Gallery controller title");
         }
     } else if (numberOfPhotos > 1) {
         if ([_delegate respondsToSelector:@selector(photoBrowser:titleForPhotoAtIndex:)]) {
